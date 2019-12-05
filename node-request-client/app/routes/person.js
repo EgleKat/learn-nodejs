@@ -8,7 +8,7 @@ router.get('/', (req,res,next) => {
 });
 router.post('/add', (req,res,next) => {
     names.push(req.body.firstName);
-    res.send("Added");
+    res.redirect("back");
 });
 
 module.exports = router;
