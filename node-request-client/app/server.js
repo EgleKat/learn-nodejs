@@ -20,10 +20,9 @@ const app = express();
 const port = 8080;
 
 express.static('public'); //specify the route of static files (html/css/js)
-//app.use("/", indexRouter);
-//app.use('/', personRouter);
+app.use("/", indexRouter);
+app.use('/person', personRouter);
 
-app.get('/', (req,res) => res.sendFile("public/form.html", {root: process.cwd()}));
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
