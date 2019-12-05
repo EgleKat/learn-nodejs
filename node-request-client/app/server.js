@@ -23,7 +23,7 @@ express.static('public'); //specify the route of static files (html/css/js)
 //app.use("/", indexRouter);
 //app.use('/', personRouter);
 
-app.get('/', (req,res) => res.sendFile("public/form.html"));
+app.get('/', (req,res) => res.sendFile("public/form.html", {root: process.cwd()}));
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
