@@ -13,15 +13,15 @@
 
 const express = require('express');
 const path = require('path');
-const indexRouter = require("/");
-const personRouter = require('/person');
+//const indexRouter = require("/");
+//const personRouter = require('/person');
 
 const app = express();
 const port = 8080;
 
 express.static('public'); //specify the route of static files (html/css/js)
-app.use("/", indexRouter);
-app.use('/', personRouter);
+//app.use("/", indexRouter);
+//app.use('/', personRouter);
 
 app.get('/', (req,res) => res.sendFile("/form.html"));
 
