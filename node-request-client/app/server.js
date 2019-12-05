@@ -23,7 +23,7 @@ const port = 8080;
 express.static('public'); //specify the route of static files (html/css/js)
 app.use("/", indexRouter);
 app.use('/person', personRouter);
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
