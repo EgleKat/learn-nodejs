@@ -14,7 +14,14 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-app.get('/', (req,res) => res.send("Hello World"));
+express.static('public'); //specify the route of static files (html/css/js)
+
+app.get('/', (req,res) => res.sendFile("/form.html"));
+
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+app.use((req,res,next) => res.status(404).send("404: Not Found"));  //specify what to do when 404 err happens
+
 
 
