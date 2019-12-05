@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req,res,next) => res.send("Respond with a resource"));
+var names = [];
+
+router.get('/', (req,res,next) => {
+    res.send(names);
+    res.send("End");
+});
+router.post('/add', (req,res,next) => {
+    names.push(req.firstName);
+    res.send("Added");
+});
 
 module.exports = router;
