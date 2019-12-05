@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 var names = [];
 
 router.get('/', (req,res,next) => {
@@ -8,7 +7,7 @@ router.get('/', (req,res,next) => {
     res.send("End");
 });
 router.post('/add', (req,res,next) => {
-    names.push(req.firstName);
+    names.push(req.body.firstName);
     res.send("Added");
 });
 
