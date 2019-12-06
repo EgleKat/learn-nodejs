@@ -15,11 +15,12 @@ const express = require('express');
 const path = require('path');
 const indexRouter = require("./routes/index");
 const personRouter = require('./routes/person');
+var bodyParser = require('body-parser');
 
 const app = express();
 const port = 8080;
 
-app.use(express.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));//specify the route of static files (html/css/js)
 app.use("/", indexRouter);
