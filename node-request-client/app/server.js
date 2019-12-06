@@ -21,7 +21,7 @@ const port = 8080;
 
 app.use(express.urlencoded())
 
-express.static('public'); //specify the route of static files (html/css/js)
+app.use(express.static('public'));//specify the route of static files (html/css/js)
 app.use("/", indexRouter);
 app.use('/person', personRouter);
 
